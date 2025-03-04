@@ -1,19 +1,24 @@
-
 import React, { useState, useEffect } from "react";
-import { Github, Sun } from "lucide-react";
+import { Github, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState<string>("home");
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(
+    () => localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Set scrolled state
       setScrolled(window.scrollY > 20);
-      
-      // Set active section based on scroll position
+
       const sections = document.querySelectorAll("section[id]");
       const scrollPosition = window.scrollY + 100;
 
@@ -93,8 +98,13 @@ const Navbar = () => {
           >
             <Github className="w-5 h-5" />
           </a>
-          <button className="p-2 rounded-full transition-colors hover:bg-secondary">
-            <Sun className="w-5 h-5" />
+          
+          {/* Dark Mode Toggle */}
+          <button 
+            className="p-2 rounded-full transition-colors hover:bg-secondary"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
           
           <button 
