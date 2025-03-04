@@ -89,7 +89,7 @@ const Hero = () => {
             <Mail className="w-5 h-5" />
           </a>
           <a 
-            href="https://www.linkedin.com/in/sabin-bhattarai-7a6856234/" 
+            href="www.linkedin.com/in/sabin--bhattarai" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-icon"
