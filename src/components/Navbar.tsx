@@ -86,7 +86,7 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-4">
           <a 
-            href="https://github.com/codenothappening" 
+            href="https://github.com/sabin-bhattarai" 
             target="_blank" 
             rel="noopener noreferrer"
             className="p-2 rounded-full transition-colors hover:bg-secondary"
