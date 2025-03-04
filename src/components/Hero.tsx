@@ -73,7 +73,7 @@ const Hero = () => {
           style={{ transitionDelay: "1s" }}
         >
           <a 
-            href="https://github.com/codenotappening" 
+            href="https://github.com/sabin-bhattarai" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-icon"
